@@ -1,15 +1,92 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f7f9f8;
+  background: #e3efe9;
   color: #2e2e2e;
 }
-
+.logo {
+  /* width: 200px;
+  height: 100px; */
+  margin: 0 auto 12px auto;
+  height: auto;
+}
 .card {
-  width: 300px;
+  width: 100%;
+  max-width: 420px;
   margin: 100px auto;
   padding: 20px;
   background: white;
   border-radius: 8px;
+} 
+.loginTitle {
+	text-align:center;
+}
+/* Form layout */
+.form {
+    text-align: left;
+}
+
+/* Group spacing */
+.form-group {
+    margin-bottom: 18px;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 6px;
+}
+.dashboard {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.dashboard-header {
+  position: sticky;
+    display: flex;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 15px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    /* margin-bottom: 20px; */
+}
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Inputs */
+.form-group input {
+    width: 90%;
+    background-color:aliceblue;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    align: center;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Focus effect */
+.form-group input:focus {
+    outline: none;
+    border-color: #4f7cff;
+    box-shadow: 0 0 0 3px rgba(79,124,255,0.2);
+}
+/* Subtitle */
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 25px;
 }
 
 input, button {
@@ -17,16 +94,21 @@ input, button {
   margin: 8px 0;
   padding: 8px;
 }
-
 button {
   background: #7fb7a3;
   border: none;
   color: white;
   cursor: pointer;
+width:100%;
+padding: 14px;
+border-radius: 10px;
+font-size:16px;
+font-weight:600;
 }
 
 header {
-  display: flex;
+  display:flex;
+  position:sticky;
   justify-content: space-between;
   padding: 20px;
 }
@@ -38,6 +120,9 @@ header {
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   background: white;
   padding: 10px;
   border-radius: 8px;
@@ -65,4 +150,53 @@ header {
 
 button {
   border-radius: 6px;
+}
+
+/* =========================
+   📱 Mobile Responsiveness
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .card {
+        margin-top: 40px;
+        padding: 25px;
+        border-radius: 16px;
+    }
+
+    .dashboard {
+        padding: 20px;
+    }
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    input {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
 }
