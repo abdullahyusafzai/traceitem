@@ -2,53 +2,87 @@
 <html>
 <head>
   <title>TraceItem - Dashboard</title>
-  <link rel="stylesheet" href="/static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css?v=3">
 </head>
+
 <body>
-  <header>
-    <h2 class="Mtitle">TraceItem Dashboard</h2>
-    <div>
-      {{ user.username }} ({{ user.role }}) |
-      <a href="/logout">Logout</a>
-    </div>
-  </header>
+
+<!-- FIXED NAVBAR -->
+<nav class="navbar">
+  <div class="brand">TraceItem</div>
+  <div class="nav-user">
+    {{ user.username }} ({{ user.role }}) |
+    <a href="/logout">Logout</a>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<main class="page">
 
   {% if user.role|lower == "teacher" %}
-    <a class="btn" href="/add-item">Add Item</a>
+    <a class="btn add-btn" href="/add-item">Add Item</a>
   {% endif %}
 
-  <div class="grid">
-    {% for item in items %}
-      <div class="item">
-        {% if item.image_url %}
-          <img src="{{ item.image_url }}">
-        {% endif %}
-        <h4>{{ item.item_name }}</h4>
-        <p>{{ item.color }} - {{ item.location_found }}</p>
-        <p>
-  Status: {% if item.status == "Found" %}
-    <span style="color: green;">Found</span>
-  {% else %}
-    <span style="color: gray;">Returned</span>
-  {% endif %}
-</p>
+  <!-- HORIZONTAL SCROLL AREA -->
+  <section class="items-wrapper">
+    <div class="grid">
 
-{% if user.role|lower == "teacher" and item.status == "Found" %}
-  <form method="post" action="/return-item/{{ item.id }}">
-    <button type="submit">Mark as Returned</button>
-  </form>
-{% endif %}
-{% if user.role|lower == "teacher" and item.status == "Returned" %}
-  <form method="post" action="/delete-item/{{ item.id }}">
-    <button type="submit"
-            style="background:#e57373; color:white;"
-            onclick="return confirm('Are you sure you want to delete this item?');">
-      Delete Item
-    </button>
-  </form>
-{% endif %}
-      </div>
-    {% endfor %}
-  </div>
+      {% for item in items %}
+        
+      <div class="item item-card">
+
+          {% if item.image_url %}
+          <div class="item-image">
+            <img src="{{ item.image_url }}" alt="Item image">
+          </div>
+          {% endif %}
+
+          <h4>{{ item.item_name }}</h4>
+          <p> <strong>Color:</strong> {{ item.color }} <br><strong>Location:</strong> {{ item.location_found }}</p>
+
+          <p class="meta">
+            Added by: <strong>{{ item.reporter.username }}</strong>
+          </p>
+
+          <p>
+            Status:
+            {% if item.status == "Found" %}
+              <span style="color: green;">Found</span>
+            {% else %}
+              <span style="color: gray;">Returned</span>
+            {% endif %}
+          </p>
+
+          {% if user.role|lower == "teacher" and item.status == "Found" %}
+            <form method="post" action="/return-item/{{ item.id }}">
+              <button type="submit">Mark as Returned</button>
+            </form>
+          {% endif %}
+
+          {% if user.role|lower == "teacher" and item.status == "Returned" %}
+            <form method="post" action="/delete-item/{{ item.id }}">
+              <button type="submit"
+                      style="background:#e57373; color:white;"
+                      onclick="return confirm('Are you sure you want to delete this item?');">
+                Delete Item
+              </button>
+            </form>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FIXED FOOTER -->
+<footer class="app-footer">
+  <p>© 2026 - TraceItem | EPVS - Visuttharangsi School Kanchanaburi <br>
+  Group Members : Sipang Choeypun | Puwamate Kriwattanapong | Pichayut </p>
+</footer>
+
 </body>
 </html>

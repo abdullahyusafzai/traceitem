@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
+from sqlalchemy.orm import relationship
 from database import Base
 
 class User(Base):
@@ -8,6 +9,7 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     password_hash = Column(String)
     role = Column(String)
+    items = relationship("Item", back_populates="reporter")
 
 
 class Item(Base):
@@ -21,3 +23,5 @@ class Item(Base):
     status = Column(String)
     reported_by = Column(Integer, ForeignKey("users.id"))
     date_found = Column(Date)
+
+    reporter = relationship("User", back_populates="items")

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
+  
   <div class="card">
     <h2>Add Found Item</h2>
     <form method="post" action="/add-item" enctype="multipart/form-data" class="form">
@@ -25,8 +26,10 @@
       <!-- <input name="color" placeholder="Color" required>
       <input name="location_found" placeholder="Found Location" required> -->
       <!-- <input type="file" name="image"> -->
-      <div class="form_group">
-          <input type="file" name="image">
+      <div class="form-group">
+          <input class="imgupload" type="file" name="image">
+      </div>
+      <div class="form-group">
           <button type="submit">Save Item</button>
       </div>
     </form>

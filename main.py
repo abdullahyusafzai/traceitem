@@ -85,7 +85,7 @@ def login(
             "login.html",
             {
                 "request": request,
-                "error": "Invalid username or password"
+                "error": "Invalid username or password!"
             }
         )
 

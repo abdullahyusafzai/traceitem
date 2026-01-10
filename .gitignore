@@ -1,0 +1,17 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database
+traceitem.db
+
+# Uploads
+static/uploads/
+
+# Editor
+.vscode/
+
+
