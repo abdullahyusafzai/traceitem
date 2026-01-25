@@ -4,7 +4,6 @@
 
 TraceItem is a web-based application designed to modernize the traditional school Lost & Found process. It allows teachers to record found items digitally and enables students to view them easily through a clean and user-friendly interface.
 
----
 ## 🚀 Features
 
 * Secure login system
@@ -16,7 +15,6 @@ TraceItem is a web-based application designed to modernize the traditional schoo
 * Responsive design (Desktop & Mobile)
 * Online deployment support
 
----
 ## 👥 User Roles
 
 ### Teacher
@@ -33,7 +31,6 @@ TraceItem is a web-based application designed to modernize the traditional schoo
 * View all found items
 * Check item details and status
 
----
 
 ## 🛠️ Technologies Used
 
@@ -44,8 +41,6 @@ TraceItem is a web-based application designed to modernize the traditional schoo
 * CSS
 * Jinja2 Templates
 * Git & GitHub
-
----
 
 ## 📂 Project Structure
 
@@ -69,7 +64,6 @@ traceitem/
 │
 └── README.md
 ```
----
 
 ## ⚙️ Installation & Setup
 
@@ -81,7 +75,6 @@ Follow these steps to run TraceItem on your local computer.
 git clone https://github.com/your-username/traceitem.git
 cd traceitem
 ```
----
 
 ### 2️⃣ Create a Virtual Environment (Recommended)
 
@@ -100,7 +93,6 @@ venv\Scripts\activate
 ```bash
 source venv/bin/activate
 ```
----
 
 ### 3️⃣ Install Dependencies
 
@@ -113,14 +105,12 @@ If `requirements.txt` is missing, install manually:
 ```bash
 pip install fastapi uvicorn sqlalchemy jinja2 python-multipart passlib[bcrypt]
 ```
----
 
 ### 4️⃣ Run the Application
 
 ```bash
 uvicorn main:app --reload
 ```
----
 
 ### 5️⃣ Open in Browser
 
@@ -129,7 +119,6 @@ Visit:
 ```
 http://127.0.0.1:8000
 ```
----
 
 ## 🔑 Default Login Credentials
 
@@ -151,7 +140,6 @@ Password: 1234
 
 *(You can change these in the database or startup logic.)*
 
----
 
 ## 🗄️ Database
 
@@ -159,7 +147,6 @@ Password: 1234
 * Database file is created automatically on first run
 * Tables are generated using SQLAlchemy models
 
----
 ## 🌐 Deployment
 
 TraceItem can be deployed online using platforms such as:
@@ -170,7 +157,6 @@ TraceItem can be deployed online using platforms such as:
 
 Once deployed, the system runs independently and does not require the developer’s computer to be on.
 
----
 ## 📈 Future Improvements
 
 * Student item claim request system
@@ -179,7 +165,6 @@ Once deployed, the system runs independently and does not require the developer�
 * Admin dashboard
 * Multi-school support
 
----
 ## 🎓 Educational Purpose
 
 This project is suitable for:
@@ -189,20 +174,15 @@ This project is suitable for:
 * Learning web development
 * Demonstrating real-world problem-solving
 
----
 ## 📜 License
 
 This project is open for educational use.
 You are free to modify and improve it for learning purposes.
 
----
 ## 🙏 Acknowledgement
 
 Special thanks to teachers and mentors who supported the development of this project.
 
----
 ## 📬 Contact
 
 If you have questions or suggestions, feel free to contact the project author.
-
----
