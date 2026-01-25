@@ -179,10 +179,6 @@ This project is suitable for:
 This project is open for educational use.
 You are free to modify and improve it for learning purposes.
 
-## 🙏 Acknowledgement
-
-Special thanks to teachers and mentors who supported the development of this project.
-
 ## 📬 Contact
 
 If you have questions or suggestions, feel free to contact the project author.
