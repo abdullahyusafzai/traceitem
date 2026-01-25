@@ -72,7 +72,7 @@ Follow these steps to run TraceItem on your local computer.
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/traceitem.git
+git clone https://github.com/abdullahyusafzai/traceitem.git
 cd traceitem
 ```
 
